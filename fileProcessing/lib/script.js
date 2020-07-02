@@ -8,7 +8,16 @@ function processFile(file){
   if ('size' in file) {
     textOutput += "size: " + file.size + " bytes <br>";
   }
-  textOutput += " THIS IS A TEST";
+  textOutput += processForXML(file);
+  return textOutput;
+}
+
+//analyzes for XML data (stub, to be expanded)
+function processForXML(file){
+  var textOutput = "";
+  if ('name' in file && file.name.endsWith(".xml")){
+    textOutput += "XML extension discovered";
+  }
   return textOutput;
 }
 
